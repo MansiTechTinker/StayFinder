@@ -14,7 +14,7 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:"https://stayfinder-uftf.onrender.com",
+    origin:"https://stayfinder-project-0y6e.onrender.com",
     credentials:true
 }))
 
