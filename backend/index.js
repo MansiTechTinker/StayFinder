@@ -14,8 +14,9 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 const allowedOrigins = [
-  "https://stayfinder-frontend.vercel.app", // Replace with your actual frontend domain
-  "http://localhost:5173" // For local development (optional)
+  "https://stayfinder-frontend.vercel.app", // if you're still using this
+  "https://stayfinder-project-0y6e.onrender.com", // deployed frontend
+  "http://localhost:5173" // for local dev
 ];
 
 app.use(cors({
