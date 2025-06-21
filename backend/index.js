@@ -13,10 +13,22 @@ let port = process.env.PORT || 6000
 let app = express()
 app.use(express.json())
 app.use(cookieParser())
+const allowedOrigins = [
+  "https://stayfinder-frontend.vercel.app", // Replace with your actual frontend domain
+  "http://localhost:5173" // For local development (optional)
+];
+
 app.use(cors({
-    origin:"https://stayfinder-project-0y6e.onrender.com",
-    credentials:true
-}))
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+
 
 app.use("/api/auth", authRouter )
 app.use("/api/user", userRouter )
