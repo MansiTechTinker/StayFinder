@@ -11,3 +11,4 @@ This platform is ideal for:
 🧭 Users who want a fast, map-integrated, and visually engaging interface to explore accommodations
 
 StayFinder aims to bring simplicity and efficiency to the accommodation-finding process, with features like real-time listings, image uploads, and mobile responsiveness for an enhanced user journey.
+
