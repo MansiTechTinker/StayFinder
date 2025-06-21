@@ -15,7 +15,7 @@ export const sighUp=async (req,res) => {
         res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite: "null",
+            sameSite: "none",
             maxAge: 7 * 24 * 60 * 60 * 1000
 
 
@@ -42,7 +42,7 @@ export const login = async (req,res) => {
         res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite: "null",
+            sameSite: "none",
             maxAge: 7 * 24 * 60 * 60 * 1000
 
 
@@ -59,6 +59,7 @@ export const logOut = async (req,res) => {
         res.clearCookie("token")
         return res.status(200).json({message:"Logout Successfully"})
     } catch (error) {
-        return res.status(500).json({message:`logout error ${error}`})
+        console.error("LOGIN ERROR:", error); 
+        return res.status(500).json({ message: `login error: ${error.message}` });
     }
 }
